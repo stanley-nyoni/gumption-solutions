@@ -1,0 +1,766 @@
+/* ===== style.css ===== */
+:root {
+  --primary-blue: #0D3B66;   /* Deep trust blue */
+  --accent-orange: #F97316;  /* Vibrant CTA orange */
+  --dark-charcoal: #1F2937;
+  --light-gray: #F9FAFB;
+  --white: #FFFFFF;
+  --border-radius: 1rem;
+  --box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02);
+  --transition: all 0.2s ease;
+  --bg-dark: #dee1e6ee;
+  --bg-light: #F9FAFB;
+}
+
+/* Global reset & typography */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-charcoal);
+  background-color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--dark-charcoal);
+}
+
+/* Bootstrap colour overrides */
+.bg-primary { background-color: var(--primary-blue) !important; }
+.btn-primary {
+  background-color: var(--primary-blue) !important;
+  border-color: var(--primary-blue) !important;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0a2e4f !important;
+  border-color: #0a2e4f !important;
+}
+
+.bg-warning, .btn-warning {
+  background-color: var(--accent-orange) !important;
+  border-color: var(--accent-orange) !important;
+  color: white !important;
+}
+.btn-warning:hover {
+  background-color: #e05e00 !important;
+  border-color: #e05e00 !important;
+  color: white !important;
+}
+
+.text-warning { color: var(--accent-orange) !important; }
+.text-primary { color: var(--primary-blue) !important; }
+.bg-light { background-color: var(--light-gray) !important; }
+
+/* Navbar */
+.navbar {
+  background-color: var(--white) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  padding: 0.75rem 0;
+}
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-blue) !important;
+}
+.nav-link {
+  font-weight: 500;
+  color: var(--dark-charcoal) !important;
+  margin: 0 0.25rem;
+  transition: var(--transition);
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-orange) !important;
+}
+.dropdown-menu {
+  border: none;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+}
+.dropdown-item {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.dropdown-item:hover {
+  background-color: rgba(13,59,102,0.08);
+  color: var(--primary-blue);
+}
+.btn-cta-nav {
+  background-color: var(--accent-orange);
+  color: white !important;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 600;
+}
+.btn-cta-nav:hover {
+  background-color: #e05e00;
+  color: white !important;
+}
+
+/* Logo default (mobile first) */
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .logo-img {
+    height: 65px;
+  }
+}
+
+
+/* HERO SECTION */
+.hero {
+  background: var(--primary-blue);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+/* Optional overlay blur */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(2px);
+}
+
+/* Badge styling */
+.hero-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Highlight text */
+.highlight {
+  color: #ff6b00;
+}
+
+/* Company name styling */
+.company-name {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Hero image effect */
+.hero-img {
+  transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.03);
+}
+
+/* Buttons hover improvements */
+.btn-warning {
+  background-color: #ff6b00;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e65c00;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #0d3b66 !important;
+}
+
+.hero-carousel img {
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel img {
+    height: 300px;
+  }
+}
+
+/* Improve indicator style */
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* Darken controls slightly for visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+
+/* Trust badges */
+.trust-badge {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 1rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+.trust-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -10px rgba(13,59,102,0.1);
+}
+.trust-badge i {
+  color: var(--accent-orange);
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+.trust-badge h6 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.trust-badge p {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 0;
+}
+
+/* Service cards */
+.services{
+  background: var(--bg-dark);
+  padding: 4rem 0;
+  color: var(--white);
+}
+
+.service-card {
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 40px -12px rgba(13,59,102,0.15);
+}
+.service-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.service-card .card-title {
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+.btn-outline-primary {
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  border-radius: 50px;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+/* CTA sections */
+.cta-orange {
+  background-color: var(--accent-orange);
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  color: white;
+  padding: 4rem 0;
+}
+.cta-blue {
+  background-color: var(--primary-blue);
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  color: white;
+  padding: 4rem 0;
+}
+.cta-blue h2, .cta-orange h2 {
+  color: white;
+}
+.cta-blue .btn, .cta-orange .btn {
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+
+/* Google review cards */
+.reviews{
+  background: var(--bg-dark);
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.review-stars {
+  color: #FFB800;
+  letter-spacing: 2px;
+}
+.verified-badge {
+  color: #0F9D58;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.google-summary {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--box-shadow);
+  border-left: 6px solid var(--accent-orange);
+}
+
+/* Accordion FAQ */
+.accordion-item {
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+.accordion-button {
+  font-weight: 600;
+  color: var(--dark-charcoal);
+  background-color: var(--white);
+  border: none;
+  padding: 1.25rem 1.5rem;
+}
+.accordion-button:not(.collapsed) {
+  background-color: rgba(13,59,102,0.03);
+  color: var(--primary-blue);
+  box-shadow: none;
+}
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(13,59,102,0.2);
+}
+.accordion-body {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--white);
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Forms */
+.form-control, .form-select {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #E5E7EB;
+  font-size: 1rem;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(13,59,102,0.1);
+}
+.form-section {
+  background: var(--bg-dark);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-charcoal);
+  color: rgba(255,255,255,0.7);
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+footer h6 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+footer a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: var(--transition);
+}
+footer a:hover {
+  color: var(--accent-orange);
+}
+.footer-logo {
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.copyright {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: var(--box-shadow);
+  }
+}
+/* About Page */
+.about-intro, .service-intro, .intro-section {
+  background: var(--primary-blue);
+  color: white !important;
+}
+
+.about-intro h1, .service-intro h1, .intro-section h1 {
+  font-size: 2.5rem;
+}
+
+.about-hero {
+  background-color: #ffffff;
+}
+
+/* Services Page */
+.service-hero{
+  background: var(--bg-dark);
+}
+
+.services-section {
+  background: #f8f9fa;
+}
+
+.service-box {
+  text-decoration: none;
+  color: #fff;
+}
+
+.service-bg {
+  position: relative;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 59, 102, 0.9),
+    rgba(13, 59, 102, 0.3)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px;
+  transition: background 0.3s ease;
+}
+
+
+.service-overlay h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.service-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.service-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--accent-orange);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.service-box:hover .service-bg {
+  transform: scale(1.05);
+}
+
+.service-box:hover .service-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(13, 59, 102, 0.95),
+    rgba(13, 59, 102, 0.6)
+  );
+}
+/* Unified Brands Grid */
+.brands-grid-unified .row {
+    --bs-gutter-x: 0.75rem; /* Smaller gap on mobile */
+    --bs-gutter-y: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .brands-grid-unified .row {
+        --bs-gutter-x: 1rem; /* Larger gap on desktop */
+        --bs-gutter-y: 1rem;
+    }
+}
+
+/* Brand Card - Unified Style */
+.brand-card-unified {
+    height: 100%;
+    position: relative;
+}
+
+.brand-card-inner-unified {
+    border-radius: 12px;
+    padding: 15px 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-height: 100px; /* Fixed height for all cards */
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .brand-card-inner-unified {
+        padding: 20px 15px;
+        min-height: 120px;
+    }
+}
+
+
+.brand-card-unified:hover .brand-card-inner-unified {
+    transform: translateY(-5px);
+}
+
+.brand-card-unified:hover .brand-card-inner-unified:before {
+    opacity: 1;
+}
+
+/* Brand Logo Wrapper */
+.brand-logo-wrapper-unified {
+    position: relative;
+    width: 100%;
+    height: 50px; /* Fixed height for logo container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .brand-logo-wrapper-unified {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+}
+
+.brand-card-unified:hover .brand-logo-wrapper-unified {
+    transform: scale(1.05);
+}
+
+.brand-logo-img-unified {
+    max-width: 80px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .brand-logo-img-unified {
+        max-width: 100px;
+        max-height: 50px;
+    }
+}
+
+.brand-card-unified:hover .brand-logo-img-unified {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+/* Brand Name */
+.brand-name-unified {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 4px;
+}
+
+@media (min-width: 768px) {
+    .brand-name-unified {
+        font-size: 0.85rem;
+        margin-top: 6px;
+    }
+}
+
+/* Other Brands Card */
+.other-brands-unified .brand-card-inner-unified {
+    background: linear-gradient(135deg, rgba(26, 95, 158, 0.05), rgba(255, 193, 7, 0.05));
+    border: 1px solid rgba(26, 95, 158, 0.1);
+}
+
+.other-brands-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.other-brands-icon-unified {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .other-brands-icon-unified {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+}
+
+.brand-card-unified:hover .other-brands-icon-unified {
+    color: var(--accent-yellow);
+    transform: rotate(90deg);
+}
+
+.other-brands-text-unified {
+    color: var(--primary-blue);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    .other-brands-text-unified {
+        font-size: 0.85rem;
+    }
+}
+
+.other-brands-unified .brand-name-unified {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+@keyframes pulseSwipe {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.brand-card-inner-unified:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.brand-card-unified:hover .brand-card-inner-unified:after {
+    opacity: 1;
+}
+
+/* Grid adjustments for better mobile viewing */
+@media (max-width: 575.98px) {
+    .brand-card-inner-unified {
+        min-height: 90px;
+        padding: 12px 8px;
+    }
+    
+    .brand-logo-wrapper-unified {
+        height: 40px;
+        margin-bottom: 6px;
+    }
+    
+    .brand-logo-img-unified {
+        max-width: 70px;
+        max-height: 35px;
+    }
+    
+    .brand-name-unified {
+        font-size: 0.7rem;
+    }
+    
+    .other-brands-icon-unified {
+        font-size: 1.5rem;
+    }
+    
+    .other-brands-text-unified {
+        font-size: 0.7rem;
+    }
+}
+
+/* For extra small screens (under 400px) */
+@media (max-width: 400px) {
+    .brand-card-inner-unified {
+        min-height: 80px;
+        padding: 10px 6px;
+    }
+    
+    .brand-logo-wrapper-unified {
+        height: 35px;
+    }
+    
+    .brand-logo-img-unified {
+        max-width: 60px;
+        max-height: 30px;
+    }
+    
+    .brand-name-unified {
+        font-size: 0.65rem;
+    }
+}
+
+
+.contact-card {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.contact-card .bg-white {
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .bg-white {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card:hover {
+  cursor: pointer;
+}
+
+.contact-hero,
+.about-hero,
+.fridge-hero, 
+.washing-machine-hero,
+.tumble-dryer-hero,
+.dishwasher-hero,
+.why-choose-us,
+.faq-section {
+  background: var(--bg-dark);
+}

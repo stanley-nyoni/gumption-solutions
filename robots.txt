@@ -1,0 +1,10 @@
+# robots.txt for Gumption Solutions
+
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Allow everything else (all main pages)
+Allow: /
+
+# Sitemap location
+Sitemap: https://gumptionsolutions.co.za/sitemap.xml
