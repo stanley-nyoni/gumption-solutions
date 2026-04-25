@@ -1,10 +1,11 @@
 # robots.txt for Gumption Solutions
+# Updated: 2026-04-21
 
-# Allow all search engines to crawl the site
 User-agent: *
-
-# Allow everything else (all main pages)
 Allow: /
 
+# Disallow CGI and system paths
+Disallow: /cgi-bin/
+
 # Sitemap location
-Sitemap: https://gumptionsolutions.co.za/sitemap.xml
+Sitemap: https://www.gumptionsolutions.co.za/sitemap.xml
