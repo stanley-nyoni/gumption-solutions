@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# -------------------------------------------------------
+# 1. Force non-www (redirect www to non-www)
+# -------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.gumptionsolutions\.co\.za [NC]
+RewriteRule ^(.*)$ https://gumptionsolutions.co.za/$1 [R=301,L]
+
+# -------------------------------------------------------
+# 2. Force HTTPS
+# -------------------------------------------------------
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# -------------------------------------------------------
+# 3. Redirect /index.html to /
+# -------------------------------------------------------
+RewriteRule ^index\.html$ https://gumptionsolutions.co.za/ [R=301,L]
+
+# -------------------------------------------------------
+# 4. Custom 404 error page
+# -------------------------------------------------------
+ErrorDocument 404 /404.html

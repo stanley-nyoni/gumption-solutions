@@ -19,7 +19,6 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--dark-charcoal);
   background-color: var(--white);
-  line-height: 1.6;
   overflow-x: hidden;
 }
 
@@ -876,4 +875,128 @@ footer a:hover {
   50% {
     box-shadow: 0 4px 28px rgba(37, 211, 102, 0.75);
   }
+}
+
+/* ===== Navbar Dropdown , Clean Responsive Styling ===== */
+
+/* Remove unwanted scrolling behaviour */
+.dropdown-menu {
+  max-height: none !important;
+  overflow-y: visible !important;
+}
+
+/* ==========================================================
+   DESKTOP STYLES
+========================================================== */
+@media (min-width: 992px) {
+  .dropdown-menu-brands {
+    column-count: 2;
+    column-gap: 0;
+    min-width: 320px;
+  }
+
+  .dropdown-menu-brands li {
+    break-inside: avoid;
+  }
+
+  .dropdown-menu-brands .dropdown-item {
+    font-size: 0.875rem;
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+  }
+}
+
+/* ==========================================================
+   MOBILE & TABLET STYLES
+========================================================== */
+@media (max-width: 991.98px) {
+
+  /* Collapsed navbar container */
+  .navbar-collapse {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 0.75rem;
+    box-shadow: var(--box-shadow);
+  }
+
+  /* General dropdown styling */
+  .dropdown-menu {
+    position: static !important;
+    float: none;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    margin-top: 0.25rem;
+    background: transparent;
+  }
+
+  /* Brands dropdown becomes 2-column grid ONLY when open */
+  .dropdown-menu-brands.show {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    padding-left: 0.5rem;
+  }
+
+  /* Brand links */
+  .dropdown-menu-brands .dropdown-item {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.6rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.35;
+  }
+
+  /* Regular dropdown items (Appliances) */
+  .dropdown-menu:not(.dropdown-menu-brands) .dropdown-item {
+    font-size: 0.9rem;
+    padding: 0.45rem 0.75rem;
+    white-space: normal;
+  }
+
+  /* Divider styling */
+  .dropdown-divider {
+    margin: 0.4rem 0;
+  }
+
+  /* Better spacing between nav items */
+  .navbar-nav .nav-item {
+    margin-bottom: 0.15rem;
+  }
+}
+
+/* ==========================================================
+   SHARED DROPDOWN STYLES
+========================================================== */
+.dropdown-header {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  font-weight: 700;
+  padding: 0.5rem 1rem 0.25rem;
+}
+
+/* ==========================================================
+   NAVBAR CALL BUTTON
+========================================================== */
+.btn-cta-nav {
+  background-color: var(--accent-orange);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.45rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-cta-nav:hover,
+.btn-cta-nav:focus {
+  background-color: #e05e00;
+  color: #fff;
 }
